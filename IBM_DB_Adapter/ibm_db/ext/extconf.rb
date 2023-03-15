@@ -184,7 +184,8 @@ if(IBM_DB_HOME == nil || IBM_DB_HOME == '')
 		puts "Environment variable IBM_DB_HOME is not set. Downloading and setting up the DB2 client driver\n"
 		destination = "#{File.expand_path(File.dirname(File.dirname(__FILE__)))}/../lib"
 	
-    archive = downloadCLIPackage(destination)
+    # archive = downloadCLIPackage(destination)
+    archive = "#{destination}/clidriver.tar.gz"
     if (ZIP)
       extract_zip(archive, destination)
     else 
