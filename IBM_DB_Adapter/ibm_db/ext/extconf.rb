@@ -202,6 +202,11 @@ if(IBM_DB_HOME == nil || IBM_DB_HOME == '')
 	end
   end
 else
+  puts "Environment variable IBM_DB_HOME is set. Expanding the DB2 client driver\n"
+  destination = "#{File.expand_path(File.dirname(File.dirname(__FILE__)))}/../lib"
+  archive = "#{destination}/clidriver.tar.gz"
+  untarCLIPackage(archive,destination)
+	
   IBM_DB_INCLUDE = "#{IBM_DB_HOME}/include"
   
   if(is64Bit)
